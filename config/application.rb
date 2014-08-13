@@ -22,7 +22,7 @@ module Ror
 
     # config.autoload_paths << Rails.root.join('lib')
 
-    config.middleware.use Rack::Cors do
+    config.middleware.insert 0, Rack::Cors do
       allow do
         origins '*'
         resource '*', :headers => :any, :methods => [:get, :post, :options]
